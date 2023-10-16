@@ -1,0 +1,168 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font-family: "Nunito Sans";
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: dodgerblue;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+input {
+  outline: 0;
+  font-size: 1em;
+  font-family: "Nunito Sans";
+  padding: 0.2em;
+  box-sizing: border-box;
+  color: dimgray;
+}
+
+button {
+  font-family: "Nunito Sans";
+  border-color: dodgerblue !important;
+  background: dodgerblue;
+  color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background: cornflowerblue;
+  border-color: cornflowerblue !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.chat-wrapper {
+  display: flex;
+  justify-content: right;
+  height: calc(30em + 4px);
+  margin-top: -2px;
+}
+
+.chat-container {
+  width: 20em;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-gap: 1em;
+  margin-right: 1em;
+}
+
+#messagesContainer, input, button {
+  border-style: solid;
+  border-width: 2px;
+  border-color: gray;
+}
+
+.canvas-wrapper {
+  overflow: auto;
+  width: 30em;
+  height: 30em;
+  outline: 2px solid gray;
+  box-sizing: border-box;
+  resize: both;
+  max-width: 800px;
+  max-height: 800px;
+  min-width: 30em;
+  min-height: 30em;
+}
+
+#canvas {
+  display: grid;
+  grid-template-rows: repeat(100, 1fr);
+  grid-template-columns: repeat(100, 1fr);
+}
+
+#canvas div {
+  width: 8px;
+  height: 8px;
+}
+
+#canvas div:hover {
+  filter: brightness(0.8) !important;
+}
+
+.color {
+  width: 2em;
+  height: 2em;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  margin-right: 0.5em;
+  display: inline-block;
+}
+
+.color:hover {
+  filter: brightness(0.8);
+}
+
+.color-wrapper {
+  width: 30em;
+  overflow: hidden;
+}
+
+.color-container {
+  width: 32em;
+}
+
+.selected-color {
+  transform: scale(1.2);
+}
+
+.message-time {
+  font-size: 0.8em;
+}
+
+.message {
+  width: 100%;
+  padding: 0.5em;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  background: whitesmoke;
+  color: dimgray;
+}
+
+.message:hover {
+  filter: brightness(0.9);
+}
+
+#messagesContainer {
+  box-sizing: border-box;
+  width: 20em;
+  overflow-y: auto;
+}

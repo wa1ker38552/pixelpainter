@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pixel Painter</title>
+    <link rel="icon" href="/static/assets/pixelpainter.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito Sans">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script>const pixelData = JSON.parse("{{pixels}}")</script>
+    <script src="/static/canvas.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="canvas" style="width: 800px; height: 800px;border-style: solid; border-width: 2px; border-color: gray;"></div>
+    </div>
+  </body>
+</html>

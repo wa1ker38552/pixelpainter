@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pixel Painter</title>
+    <link rel="icon" href="/static/assets/pixelpainter.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito Sans">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script>const pixelData = JSON.parse("{{pixels}}")</script>
+    <script src="/static/script.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="chat-wrapper">
+        <div class="chat-container">
+          <div id="messagesContainer"></div>
+          <div style="display: grid; grid-template-columns: 1fr auto; grid-gap: 1em;">
+            <input id="messageInput" type="text" autocomplete="off" spellcheck="false" placeholder="Message...">
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </div>
+      <div style="display: grid; grid-gap: 1em">
+        <div class="canvas-wrapper"><div id="canvas"></div></div>
+        <div class="color-wrapper"><div class="color-container">
+          <div class="color" onclick="setColor(8, this)" style="background: darkred"></div>
+          <div class="color" onclick="setColor(21, this)" style="background: brown"></div>
+          <div class="color" onclick="setColor(2, this)" style="background: red"></div>
+          <div class="color" onclick="setColor(9, this)" style="background: orangered"></div>
+          <div class="color" onclick="setColor(3, this)" style="background: orange"></div>
+          <div class="color" onclick="setColor(10, this)" style="background: gold"></div>
+          <div class="color" onclick="setColor(4, this)" style="background: yellow"></div>
+          <div class="color" onclick="setColor(11, this)" style="background: greenyellow"></div>
+          <div class="color" onclick="setColor(12, this)" style="background: limegreen"></div>
+          <div class="color" onclick="setColor(5, this)" style="background: green"></div>
+          <div class="color" onclick="setColor(13, this)" style="background: darkseagreen"></div>
+          <div class="color" onclick="setColor(14, this)" style="background: turquoise"></div>
+          <div class="color" onclick="setColor(15, this)" style="background: dodgerblue"></div>
+          <div class="color" onclick="setColor(6, this)" style="background: blue"></div>
+          <div class="color" onclick="setColor(16, this)" style="background: blueviolet"></div>
+          <div class="color" onclick="setColor(17, this)" style="background: darkviolet"></div>
+          <div class="color" onclick="setColor(7, this)" style="background: purple"></div>
+          <div class="color" onclick="setColor(18, this)" style="background: indigo"></div>
+          <div class="color selected-color" onclick="setColor(1, this)" style="background: black"></div>
+          <div class="color" onclick="setColor(19, this)" style="background: gray"></div>
+          <div class="color" onclick="setColor(20, this)" style="background: lightgray"></div>
+          <div class="color" onclick="setColor(0, this)" style="background: white; border-color: lightgray; border-style: solid; border-width: 2px; box-sizing: border-box;"></div>
+        </div></div>
+      </div>
+      <div style="width: 20em; margin-left: 1em">
+        <a href="/canvas" target="_blank">View canvas</a>
+        <a target="_blank" onclick="document.querySelector('#messagesContainer').innerHTML = ''">Clear chat</a>
+        <a onclick="resetResize()">Resize to origin</a>
+      </div>
+    </div>
+  </body>
+</html>
