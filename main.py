@@ -12,7 +12,8 @@ socket = SocketIO(app)
 
 @app.route('/')
 def app_index():
-  return render_template('index.html', pixels=db.get_key('pixels'))
+  # return render_template('index.html', pixels=db.get_key('pixels'))
+  return 'hi'
 
 @app.route('/canvas')
 def app_canvas():
