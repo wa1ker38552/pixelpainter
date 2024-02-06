@@ -18,6 +18,11 @@ def app_index():
 def app_canvas():
   return render_template('canvas.html', pixels=db.get_key('pixels'))
 
+@app.route('/deploy')
+def api_deploy():
+  os.system('git pull')
+  os.system('python3 main.py')
+
 @socket.on('PixelChange')
 def PixelChange(data):
   p = db.get_key('pixels')
