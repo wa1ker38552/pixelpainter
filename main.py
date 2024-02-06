@@ -3,6 +3,7 @@ from flask import render_template
 from flask_socketio import emit
 from database import Database
 from flask import Flask
+import os
 
 db = Database('database.json')
 app = Flask(__name__)
