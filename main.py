@@ -29,4 +29,4 @@ def PixelChange(data):
 def NewMessage(data):
   socket.emit('RecieveMessage', data)
 
-socket.run(app, host='0.0.0.0', allow_unsafe_werkzeug=True)
+socket.run(app, host='0.0.0.0')
