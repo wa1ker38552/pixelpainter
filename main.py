@@ -12,14 +12,13 @@ socket = SocketIO(app)
 
 @app.route('/')
 def app_index():
-  # return render_template('index.html', pixels=db.get_key('pixels'))
-  return 'hi'
+  return render_template('index.html', pixels=db.get_key('pixels'))
 
 @app.route('/canvas')
 def app_canvas():
   return render_template('canvas.html', pixels=db.get_key('pixels'))
 
-@app.route('/deploy')
+@app.route('/deploy', methods=['POST'])
 def api_deploy():
   os.system('git pull')
   os.system('python3 main.py')
